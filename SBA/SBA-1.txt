@@ -1,0 +1,217 @@
+
+
+1) Create a arraylist of integers and find the sum and average of the entire list.
+
+import java.util.Scanner;
+public class Sum_Average
+{
+    public static void main(String[] args) 
+    {
+        int n, sum = 0;
+        float average;
+        Scanner s = new Scanner(System.in);
+        System.out.print("Enter no. of elements you want in array:");
+        n = s.nextInt();
+        int a[] = new int[n];
+        System.out.println("Enter all the elements:");
+        for(int i = 0; i < n ; i++)
+        {
+            a[i] = s.nextInt();
+            sum = sum + a[i];
+        }
+        System.out.println("Sum:"+sum);
+        average = (float)sum / n;
+        System.out.println("Average:"+average);
+    }
+}
+// output
+
+/*Enter no. of elements you want in array:10
+Enter all the elements:
+5
+6
+7
+9
+56
+54
+4
+6541
+45
+12
+Sum:6739
+Average:673.9 */
+
+2) Create two arraylist of strings to take First_name and Last_name of the students,
+and print their whole name.
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Scanner;
+
+public class FirstnameLastname {
+	public static void main(String[] args) 
+	{
+		ArrayList Fname = new ArrayList<String>();
+		ArrayList Lname = new ArrayList<String>();
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the no of Students");
+		int n = sc.nextInt();
+		for(int i=0; i<n;i++)
+		{
+			String F;
+			String L;
+			
+			System.out.println("Enter First Name of Student "+(i+1));
+			F = sc.next();
+			Fname.add(F);
+			System.out.println("Enter the secound name of Student "+(i+1));
+			L = sc.next();
+			Lname.add(L);
+		}
+		Iterator Ftr = Fname.iterator();
+		Iterator Ltr = Lname.iterator();
+		
+		for (int i =0;i<n;i++)
+		{
+			System.out.println("The whole name of Student "+(i+1)+"is ==>"+Ftr.next() +" "+Ltr.next());
+		}
+	}
+
+}
+
+/* output
+ * Enter the no of Students
+3
+Enter First Name of Student 1
+manu
+Enter the secound name of Student 1
+sudhan
+Enter First Name of Student 2
+ram
+Enter the secound name of Student 2
+sham
+Enter First Name of Student 3
+joseph
+Enter the secound name of Student 3
+castro
+The whole name of Student 1is ==>manu sudhan
+The whole name of Student 2is ==>ram sham
+The whole name of Student 3is ==>joseph castro*/
+
+3) Write a program to create a arraylist of double element and add the elements.
+sort the elements in descending order and print it.*/
+
+import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class Decending {
+	public static void main(String[] args)
+	{
+			
+				ArrayList<Double> sample = new ArrayList<Double>();
+				sample.add (1.5);
+				sample.add(2.0);
+				sample.add(5.8);
+				sample.add (10.2);
+				System.out.println("The array list of double elements :"+sample);
+				Collections.sort(sample, Collections.reverseOrder());
+				System.out.println("The decending order");
+				for (double num: sample) {
+					System.out.println(num);
+				}
+		
+	}
+
+}
+
+//output
+
+/*The decending order
+10.2
+5.8
+2.0
+1.5*/
+
+4) Write a program to check for the occurrence of a particular character in a string and display how many times it has occurred.
+//note: take the String  and the character to be checked as a input from the user.
+
+public class Q4ArrayOccurances {
+
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter the String occurance");
+		String s=sc.next();
+		
+		int totalcount=s.length();
+		
+		int totalcount_afterRemove=s.replace("a", "").length();
+		
+		int count=totalcount-totalcount_afterRemove;
+		
+		System.out.println("Number occurances of a is: "+count);
+		
+	}
+
+}
+
+// output
+/* 
+Enter the String occurance
+manu
+.Number occurances of a is: 1
+Enter the String occurance
+gh
+Number occurances of a is: 0
+*/
+
+5) Write a program to take an input of a string with multiple words and convert it into a string array,
+and check if every element of that array is a Palindrome.
+Note: Palindrome is a word which when reversed also is the same.*/
+
+import java.util.Scanner;
+
+public class Q5StringPlaindrom {
+
+	public static void main(String[] args)
+	{
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter the string");
+		
+		String str=sc.next();
+		String org_str=str;
+		
+		String rev="";
+		
+		int len=str.length();
+		
+		for(int i=len-1;i>=0;i--)
+		{
+			rev=rev+str.charAt(i);
+		}
+		if(org_str.equals(rev))
+		{
+			System.out.println(org_str+" is a paliandrome");
+		}
+		else
+		{
+			System.out.println(org_str+" is not a plaindrome");
+		}
+	}
+}
+
+//output
+/*
+Enter the string
+mom
+mom is a paliandrome
+
+Enter the string
+das
+das is not a plaindrome
+*/
